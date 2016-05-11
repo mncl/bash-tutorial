@@ -33,11 +33,11 @@ echo 'Hello, world!' > hello.txt
 echo 'This is appended!' >> hello.txt
 
 # The stderr output is written to file
-grep ello hello.txt hej.txt 2> grep-errors.txt
+grep ello hello.txt missing.txt 2> grep-errors.txt
 
 # The stderr output is written to the same destination as stdout
 # the & is needed so that bash doesn't write to the file called '1'.
-grep ello hello.txt hej.txt 1> grep.txt 2>&1
+grep ello hello.txt missing.txt 1> grep.txt 2>&1
 
 # Write name to file.
 echo "Jon" > name.txt
@@ -47,4 +47,10 @@ read -p 'Enter name: ' name < name.txt && echo "Hi $name!"
 ```
 
 ## Exercises
+
+1. What happens if you reverse the order redirection above? Why?
+```bash
+grep ello hello.txt missing.txt 2>&1 1> grep.txt
+```
+
 

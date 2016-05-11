@@ -1,5 +1,49 @@
 # Commands
 
+## Exit Status
+
+When a process terminates it returns an exit status. A status of 0 means that
+the process executed successfully while a non-zero status signals an error. Each
+command can use a more fine grained definition of the status codes, e.g., if
+`curl` finishes with status 6 it means that it could not resolve the host.
+
+```bash
+# run curl and print exit status
+curl http://www.google.c/; echo $?
+```
+
+### Exercise
+
+1. What happens if you immediately run `echo $?` again after the command above?
+2. Correct the url above and run again. What is the status now?
+
+
+## Command Lists
+
+In Bash, a (command) list is a sequence of one or more commands (or
+[pipelines](pipelines.md)) separated by one of the operators `;`, `&&`, or `||`.
+
+```bash
+
+# Execute the commands in sequence and wait for each command to terminate.
+command1; command2
+
+# command2 is executed if and only if command1 is successful (zero status)
+command1 && command2
+
+# command2 is executed if and only if command1 is not successful (non-zero status)
+command1 || command2
+```
+
+### Exercise
+
+1. Execute curl and `echo 'OK'` if and only if command terminates successfully.
+2. Execute curl and `echo 'Not OK'` if and only if command terminates unsuccessfully.
+3. Check the exit status of 1 and 2 in all possible cases. Explain.
+
+
+
+
 ## man -- display manual pages
 
 Use the `man` command to get the manual page for a specific command. The man
