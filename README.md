@@ -1,7 +1,7 @@
 # Bash Tutorial
 
-This tutorial assume that you know how to open a bash terminal and that can
-execute a basic commands like `cd`, `ls` etc.
+This tutorial assume that you know how to open a bash terminal and
+execute basic commands like `cd`, `ls` etc.
 
 
 
