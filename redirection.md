@@ -42,7 +42,7 @@ grep ello hello.txt hej.txt 1> grep.txt 2>&1
 # Write name to file.
 echo "Jon" > name.txt
 
-# Read name from file (what happen to the prompt?)
+# Read name from file (what happened to the prompt?)
 read -p 'Enter name: ' name < name.txt && echo "Hi $name!"
 ```
 
