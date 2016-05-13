@@ -1,5 +1,42 @@
 # Commands
 
+Bash is one of many so called command shell, i.e. a command line interface to the
+operating system on which it runs. Some commands the you write are built in to
+Bash and some are part of the operating system.
+
+If you are unsure where a command comes from you use the `type` command to get
+some quick information. Below I execute `type grep`. On my machine grep is
+aliased in order to add color output.
+
+
+```bash
+$ type grep
+grep is aliased to `grep --color=auto'
+$ type -a grep
+grep is aliased to `grep --color=auto'
+grep is /usr/local/bin/grep
+grep is /usr/bin/grep
+```
+
+With the `-a` flag we see all types of grep command installed. As you can see
+I've got not only the alias, but also two files. The last one in `/usr/bin` is
+the default that comes with Mac OS X (BSD grep). The first one in `/usr/local/bin` is the
+GNU version of grep which I installed using Homebrew.
+
+It is important to note that different Unixes may have different implementations
+of the operating system commands like `grep`. The GNU versions are what's
+default on Linux, while Mac OS X is derived from BSD. Often the differences are minor but
+, but sometimes, for example BSD grep does not have a `--perl-regexp` flag.
+
+If you are on a Mac I recommend that you install [Homebrew](http://brew.sh/),
+the missing package manager for OS X. With Homebrew you can easily install the
+GNU versions of your favorite commands.
+
+```bash
+# Install GNU grep as 'grep' and not 'ggrep'
+brew install grep --with-default-names
+```
+
 ## Exit Status
 
 When a process terminates it returns an exit status. A status of 0 means that
