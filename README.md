@@ -9,4 +9,5 @@ execute basic commands like `cd`, `ls` etc.
 
 * [Commands](commands.md)
 * [Redirection](redirection.md)
+* [Pipelines](pipelines.md)
 

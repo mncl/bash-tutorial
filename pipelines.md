@@ -1,6 +1,6 @@
 # Pipelines
 
-A pipeline, or simply pipe, is a sequence of commands connected so that the output of
+A pipeline (or simply pipe) is a sequence of commands connected so that the output of
 one command is the input of the other. E.g.
 
 ```
