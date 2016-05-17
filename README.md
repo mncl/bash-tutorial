@@ -14,4 +14,7 @@ execute basic commands like `cd`, `ls` etc.
     - [Permissions](files/permissions.md)
 - [Redirection](redirection.md)
 - [Pipelines](pipelines.md)
+- Common Tasks(tasks.md)
+
+
 
