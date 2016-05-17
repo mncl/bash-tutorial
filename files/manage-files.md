@@ -31,30 +31,3 @@ do?
 and all its files without asking!
 
 
-## Editing Files with vi
-
-When you edit files on your local machine you can use your favorite editor, but
-when on a remote server it is good to know how to edit a file with `vi`.
-
-Note that nowadays `vi` is often come to mean `vim` which is an improved
-successor. Should you compare them the first difference you'll notice is that
-arrow keys works properly in `vim`. On most systems `vi` is just a symbolic link
-to `vim`.
-
-```bash
-$ type vi
-vi is hashed (/usr/bin/vi)
-$ ls -l /usr/bin/vi
-lrwxr-xr-x  1 root  wheel  3  1 Okt  2015 /usr/bin/vi -> vim
-```
-
-
-1. Start `vi`. Read `:help`. Navigate `|tags|` with `Ctrl-5` on international
-keyboards. Use `:q` to quit.
-
-1. Modify the text using `vi README.md`.
-    - Navigate to the position you want to change.
-    - Press `i` to enter insertion mode. Update text.
-    - Press `ESC` or `Ctrl-C` to go back to view mode.
-    - Save and quit `:wq`.
-    - Quite without saving `:q!`
