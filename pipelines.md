@@ -13,7 +13,7 @@ to the stdin of the next command. Thus, `ls` produces a list of files on stdout,
 the stdin of grep which in turn prints only lines containing
 `js` on its stdout, which is connected to the stdin of `wc` which prints the
 number of input lines.
-
+![How the pipes connect](lsGrepWc-l.png)
 
 ## Exercise
 
