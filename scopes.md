@@ -1,15 +1,15 @@
-# Blocks and Scopes
+# Scopes
 
 
-## Blocks
-Each block has
+## Scope
+Each scope has
 * a environment that contains variables
 * its own stdin, stdout and stderr
 * a exit code or return value. 0-255 where 0 is success and 1-255 is failed
 
 The different block scopes are:
 
-1. Blockscope,  `{}`
+1. Block,  `{}`
 2. Subshell, `()`
 3. Function, `name() {}`
 4. source, `source`
@@ -18,14 +18,13 @@ The different block scopes are:
 
 
 
-### Blockscope
+### Block
 Blockscope keeps the same environment as the surrounding.
-If no std input is specified the surrounding scopes std in is used.
-If not redirection is specified for stdout or stderr thet are connected to the surrounding scopes equivialents.
+If no stdin is specified the surrounding scopes stdin is used.
+If no redirection is specified for stdout or stderr they are connected to the surrounding scopes equivialents.
 The exit code is that of the last command executed.
 
 ```bash
-#Block scope example 
 {
   echo -n ' World' | rev
   echo -n 'Hello,' | rev
@@ -39,7 +38,6 @@ Follows the same rules on redirection and exit codes as Blockscope.
 Subshells are more expensive than block scopes.
 Some built in things like current directory is reset after leaving a subshellSome built in thingsgoes for options, ex: `set -o pipefail`.
 ```bash
-#Subshell example
 (
   HOME="garbage"
   echo "$HOME"
@@ -52,7 +50,7 @@ echo "$HOME"
 ```
 
 ### Function
-Functions has blockscope with the exception that some special variables update.
+Functions works as blocks with the exception that some special variables update.
 This includes `$@`.
 When exiting the scope the parameter arguments are set to what they where before entering the function.
 To get function invocation scope variables use `local`, remeber that local is a command and it has its own return value.
