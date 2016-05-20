@@ -3,7 +3,7 @@
 Execute in bash-tutorial folder.
 
 ```bash
-#/bin/bash
+#!/bin/bash
 
 # files owned by by alice (dot is CWD)
 find . -type f -user alice
