@@ -10,6 +10,7 @@ Bash comes with a few different scopes:
 3. Function, `name() {}`
 4. source, `source`
 5. Pipeline, `|`
+7. Command Substitution, `$()`
 6. External commands
 
 Each scope has
@@ -86,20 +87,22 @@ A="foo"; echo "$A" ; { A="bar"; echo "$A" ;} | cat - ; echo "$A"
 A="foo"; echo "$A"; { A="bar"; echo "$A" ;};  echo "$A"
 ```
 
+
+
 ### External commands
-Commands that are not shell built ins see the environment variables that are exported.
+Commands that are not shell builtins see the environment variables that are exported.
 This is inially the same as your inital environment.
 `export foo` marks the variable foo to the list of variables to be exported.
 `export foo="some value"` sets the variable foo to 'some value' and marks it to be exported.
 The exported variables use the current values, not what was originally exported.
-Variables presented before the command also gets exported. 
+Variables presented before the command also gets exported.
 
 ```bash
 A="Hello!" ; env | grep Hello
 A="Hello!" env | grep Hello
 (export A="Hello!" ; env | grep Hello)
 (export A="Hello!" ; A="World!" ; env | grep World)
-(export A="Hello!" ; A="World!" ; A="fantastic" env | grep fantastic
+(export A="Hello!" ; A="World!" ; A="fantastic" env | grep fantastic)
 ```
 
 
